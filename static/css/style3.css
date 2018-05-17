@@ -1,0 +1,36 @@
+body {
+	
+	background-image: url(../images/Sad-Wallpaper-38.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+h1 {
+	padding-left: 50px
+}
+.img-banner {
+	position: relative;
+}
+.img-banner img {
+	display: block;
+}
+.img-audio {
+	position: absolute;
+	bottom: 0;
+}
+.name {
+	margin-top: 0px;
+	text-decoration: none;
+	color: green;
+}
+.group {
+	max-width: 1500px;
+	
+
+}
+.group li {
+
+	list-style: none;
+	padding: 0px 2px;
+	float: left;
+}

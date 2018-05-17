@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>album</title>
+	<link rel="stylesheet" href='/static/css/style3.css' />
+</head>
+<body>
+	
+
+	<h1>{{title}}{{albm.album_name}}</h1>
+	
+	<ul class="group">
+	{% for obj in trk_list %}
+	<li>
+	<div class="img-banner">
+	<h3><a href='{{ obj.get_absolute_url }}'><div class="name">{{obj.song_name}}</div></a></h3>
+	{% if obj.song_image %}
+	<a href='{{ obj.get_absolute_url }}'><img src='{{ obj.song_image.url }}' height='200' width='300' class='img-responsive' /></a><br>
+	{% endif %}
+	<div class="img-audio">
+	{% if obj.audio_file %}
+	<audio controls="controls">
+	<source src="{{ obj.audio_file.url }}" type="audio/mpeg" >
+    </audio>
+    {% endif %}</div></div><br>
+    
+    
+    </li>
+	{% endfor %}
+   </ul>
+
+</body>	
+</html>

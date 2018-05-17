@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Home</title>
+	<link rel="stylesheet" href='/static/css/style4.css' />
+</head>
+<body>
+<form method='GET' action=''>
+<input type='text' placeholder='Search songs'/>
+<input type='submit' value='Search' />
+</form>
+
+{% for obj1 in album_list %}
+<h1><a href='{{ obj1.get_absolute_url1 }}'>{{obj1.album_name}}</a></h1>
+{% for obj in obj1.song_set.all %}
+{% if obj.album %}
+
+<a href='{{ obj.get_absolute_url }}'><img src='{{ obj.song_image.url }}' height='200' width='300' class='img-responsive' /></a>
+
+
+{% endif %}
+{% endfor %}
+
+{% endfor %}
+
+</body>
+</html>
