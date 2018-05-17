@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -23,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!4c39bc527r#(o+q1is)aia_zv72!jbx&)w)0edc459#84)+_j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['www.musicmania1.co','musicmania1.co']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -51,10 +52,6 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'musicmania1.urls'
-ROOT_HOSTCONF='musicmania1.hosts'
-DEFAULT_HOST='www'
-DEFAULT_REDIRECT_URL="http://www.musicmania1.co"
-PARENT_HOST="musicmania1.co"
 
 TEMPLATES = [
     {
@@ -135,3 +132,4 @@ MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR),"media_cdn1")
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
+django_heroku.settings(locals())
